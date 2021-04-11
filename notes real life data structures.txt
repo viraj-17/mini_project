@@ -1,0 +1,311 @@
+$$$$  introduction	$$$$$
+
+{{1}} intro to js
+
+in html link js via script command
+<script src=" adrres of js file"></script>
+<o/p> in inspect->console of webpage
+
+javascript
+
+
+let a=10;
+console.log(a);
+console.log("hello world");
+c= 10;// global 
+var d=20; // fuction scope
+
+let e = 30;//block scope
+
+//function declaration
+
+function square_root(n) {
+	console.log(Math.sqrt(n));
+	return Math.sqrt(n);
+} 
+
+
+In js all fuctons are taken to top callled has Hoisting(like a flag)
+sqr(10);// generates error
+
+// functon generation
+var sqr=square_root(){
+ 	console.log("in second");
+	return;
+}
+
+let arr = ["apple","mango","orange"];
+console.log(arr);
+
+for(let i=0;i<3;i++){
+	console.log(arr[i]);
+}
+
+arr.push("kiwi"); //Insert at back
+arr.pop(); ??remove from back
+arr.shift();//remove from front
+arr.unshift("papaya"); //add from front 
+arr.indexof("kiwi");// finds index
+arr.length
+ 
+
+{{6}}
+
+allows to create object without defining the class
+
+var bird = {}; // object
+
+var bird ={
+	x:100,
+	y:100,
+eggs:[1,2,3,4],
+
+	fly:function(){
+	console.log(" bird is flying");
+}
+	
+};
+
+
+for(let i=0;i<bird.eggs.length;i++){
+	console.log(bird.eggs[i]);
+}
+
+// for each looop
+
+bird.eggs.forEach(function(val,idx){
+ 	console.log(idx,val);
+});
+
+
+{{7}}
+
+
+//ways of creating object
+
+// one way
+
+var apple ={
+	taste:"sweet",
+	color:"red",
+}
+
+// another way 
+
+function Fruit(taste,color){
+	this.taste = taste;
+	this.color = color;
+}
+
+let mango = new Fruit("sweet","yellow");
+
+// class method keyword
+//class declaration
+ class FruitClass{
+
+	constructor(taste,color){
+		this.taste=taste;
+		this.color = color;
+}
+}; 
+let kiwi= new Fruit("sour","green");
+
+// class exprression 
+
+let FruitClass2 =class {
+	constructor(taste,color){
+		this.taste=taste;
+		this.color = color;
+}
+};
+
+
+{{8}} Dom manipulation
+
+ document object model--> tree like data structure
+we can dirctly modify html with help pf js ->> modifying dom tree
+eg documents.getElementsByTagName('p')
+we can insert - delete -modify 
+
+
+
+
+
+
+{{9}} html5 canvas
+
+canvas = document.getElementById("mycanva");
+canvas.width= 500;
+canvas.height= 500;
+
+// canvas is used to draw graphics
+
+pen = canvas.getContext('2d')
+
+
+// browse and learn various properties of  pen object
+
+
+{{10}} Game loop
+
+
+
+
+snake.js (((((
+
+
+
+function init() {
+
+canvas = document.getElementById("mycanva");
+W=canvas.width= 500;
+H=canvas.height= 500;
+
+pen = canvas.getContext('2d')
+
+game_over = false;
+
+rect = {
+x:20,
+y:20,
+w:20,
+h:20,
+speed: 10,
+}
+
+}
+ 
+function draw(){
+// console.log("in draw");
+pen.clearRect(0,0,W,H);
+pen.fillStyle ="aqua";
+pen.fillRect(rect.x,rect.y,rect.w,rect.h);
+
+
+}
+
+function update() {
+//console.log("in update");
+	rect.x+=rect.speed;
+	if(rect.x >W-rect.w || rect.x<0){
+		rect.speed *= -1;
+	}
+	
+}
+
+function gameloop() {
+// console.log("in game loop");
+	if(game_over==true){
+		clearInterval(f);
+	}
+	draw() ;
+	update();
+}
+
+init();
+var f =setInterval(gameloop,100);
+
+if(game_over==true){
+clearInterval(f);
+}
+
+
+
+))))))
+
+
+index.html ((((((
+<html>
+	<head>
+ 	<title>
+		hey user</title>
+	<style>
+		#mydiv{
+
+		width: 100px;
+		height:100px;
+		background-color: red;
+		margin : 20px;
+		}
+
+		#mycanva{
+		background-image: url("abc.jpg");
+		 }
+		</style> 
+
+		
+	</head>
+
+	<body>
+		<div id ="mydiv" ></div> 
+		<canvas id="mycanva" width=1000px height=1000px> </canvas>
+		<h1> hello friend</h1>
+		<script src="snake.js"></script> 
+
+	</body>
+</html>
+))))))
+
+
+
+
+
+
+
+{{11}} event listeners
+
+
+//event listeners
+
+function listen() {
+console.log("you clicked on doc ");
+}
+
+function f1(){
+console.log("you clicked on a canva ");
+}
+document.addEventListener('click',listen); 
+canvas.addEventListener('click',f1); 
+
+function f3(e){
+
+	console.log("key pressed is",e.key);
+}
+
+document.addEventListener('keydown',f3);
+
+
+
+
+
+$$$$$$  snake game $$$$$
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+ 
+
+
